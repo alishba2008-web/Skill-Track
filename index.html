@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillTrack | Institute Learning System</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <h2>SkillTrack<span>.</span></h2>
+            <p>Institute Learning System</p>
+        </div>
+
+        <nav class="navigation">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#tasks">Practical Tasks</a>
+            <a href="#help">Learning Help</a>
+            <a href="#submissions">Submissions</a>
+            <a href="#skills">Skill Analysis</a>
+            <a href="#passport">Skill Passport</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Learn. Practice. Prove.</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">STUDENT WORKSPACE</p>
+                <h1>My Learning Dashboard</h1>
+                <p>Track your practical work and grow your skills.</p>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">S</div>
+                <div>
+                    <strong>Student</strong>
+                    <p>Web Development</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="stats" id="dashboard">
+            <article class="stat-card">
+                <p>Total Tasks</p>
+                <h2 id="totalTasks">0</h2>
+                <span>All assigned practicals</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Completed Tasks</p>
+                <h2 id="completedTasks">0</h2>
+                <span>Practicals completed</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Pending Reviews</p>
+                <h2 id="pendingReviews">0</h2>
+                <span>Awaiting teacher review</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Verified Skills</p>
+                <h2 id="verifiedSkills">0</h2>
+                <span>Teacher-verified skills</span>
+            </article>
+        </section>
+
+        <section class="panel" id="tasks">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR WORK</p>
+                    <h2>Practical Task Manager</h2>
+                </div>
+            </div>
+
+            <form id="taskForm" class="task-form">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter a practical task..."
+                    required
+                >
+
+                <select id="taskPriority">
+                    <option value="Normal">Normal Priority</option>
+                    <option value="High">High Priority</option>
+                    <option value="Low">Low Priority</option>
+                </select>
+
+                <button type="submit">+ Add Task</button>
+            </form>
+
+            <div id="taskList" class="task-list">
+                <p class="empty-message">No tasks added yet. Add your first practical!</p>
+            </div>
+        </section>
+
+        <section class="panel" id="help">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">LEARNING SUPPORT</p>
+                    <h2>I'm Stuck — Help Center</h2>
+                </div>
+            </div>
+
+            <p class="description">
+                Select your problem to get a helpful next step.
+            </p>
+
+            <label for="stuckReason">What is your difficulty?</label>
+
+            <select id="stuckReason" class="full-input">
+                <option value="">Choose your problem</option>
+                <option value="concept">I don't understand the concept</option>
+                <option value="code">I don't know how to write the code</option>
+                <option value="error">My code has an error</option>
+                <option value="logic">I cannot solve the problem</option>
+            </select>
+
+            <button id="getHint" type="button">Get Learning Hint</button>
+
+            <div id="hintResult" class="hint-box" aria-live="polite">
+                Your learning hint will appear here.
+            </div>
+        </section>
+
+        <section class="panel" id="submissions">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SHOW YOUR WORK</p>
+                    <h2>Practical Submissions</h2>
+                </div>
+            </div>
+
+            <form id="submissionForm" class="submission-form">
+                <label for="submissionTask">Practical name</label>
+                <input
+                    type="text"
+                    id="submissionTask"
+                    placeholder="e.g. Student Registration Form"
+                    required
+                >
+
+                <label for="projectLink">Project link (optional)</label>
+                <input
+                    type="url"
+                    id="projectLink"
+                    placeholder="https://example.com"
+                >
+
+                <label for="submissionNotes">Explain what you learned</label>
+                <textarea
+                    id="submissionNotes"
+                    rows="4"
+                    placeholder="Describe your practical work..."
+                    required
+                ></textarea>
+
+                <button type="submit">Submit Practical</button>
+            </form>
+
+            <div id="submissionList" class="submission-list">
+                <p class="empty-message">Your submitted practicals will appear here.</p>
+            </div>
+        </section>
+
+        <section class="panel" id="skills">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR DEVELOPMENT</p>
+                    <h2>Skill Gap Analysis</h2>
+                </div>
+            </div>
+
+            <p class="description">
+                Practice regularly and use teacher feedback to identify
+                the skills that need more attention.
+            </p>
+
+            <div id="skillAnalysis" class="skill-analysis">
+                <p>Skill suggestions will appear as you record your learning progress.</p>
+            </div>
+        </section>
+
+        <section class="panel" id="passport">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR ACHIEVEMENTS</p>
+                    <h2>My Skill Passport</h2>
+                </div>
+            </div>
+
+            <p class="description">
+                Your portfolio of skills verified by your teacher.
+            </p>
+
+            <div id="passportList" class="passport-list">
+                <p class="empty-message">
+                    Verified skills will appear here after teacher review.
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>SkillTrack © 2026 — Learn. Practice. Prove.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
